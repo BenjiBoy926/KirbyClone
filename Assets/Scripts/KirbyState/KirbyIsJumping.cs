@@ -6,7 +6,8 @@ public class KirbyIsJumping : KirbyState
 {
     private void Awake()
     {
-        AddFunction(new ApplyAirMovement(this));   
+        AddFunction(new ApplyAirMovement(this));
+        AddFunction(new SetIsFloatingWhenJumpActionTriggered(this));
     }
     protected override void Update()
     {

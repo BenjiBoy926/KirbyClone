@@ -15,8 +15,13 @@ MonoBehaviour:
   _walkingMovement:
     _acceleration: 20
     _topSpeed: 5
+  _jumpSpeed: 7
+  _jumpTime: 0.5
   _airMovement:
     _acceleration: 10
     _topSpeed: 10
-  _jumpSpeed: 7
-  _jumpTime: 0.5
+  _floatSpeed: 7
+  _floatingGravity: 1.5
+  _floatingMovement:
+    _acceleration: 5
+    _topSpeed: 5

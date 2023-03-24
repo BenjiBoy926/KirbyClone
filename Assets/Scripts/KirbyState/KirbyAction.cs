@@ -10,8 +10,8 @@ public enum KirbyAction
     StartJumping,
     StopJumping,
 
-    StartFloating,
-    StopFloating,
+    StartAttacking,
+    StopAttacking,
 
     StartGuarding,
     StopGuarding

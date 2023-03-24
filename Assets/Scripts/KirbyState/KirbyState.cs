@@ -65,10 +65,6 @@ public abstract class KirbyState : MonoBehaviour
     {
         _functions.Add(function);
     }
-    public void RemoveFunction(KirbyStateFunction function)
-    {
-        _functions.Remove(function);
-    }
     public void SetIntendedNextState(KirbyState state)
     {
         _intendedNextState = state;

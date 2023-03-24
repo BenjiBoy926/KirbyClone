@@ -13,6 +13,8 @@ public class Player : MonoBehaviour
     private string _headingActionName = "Heading";
     [SerializeField]
     private string _jumpActionName = "Jump";
+    [SerializeField]
+    private string _attackActionName = "Attack";
 
     private void Awake()
     {
@@ -40,14 +42,23 @@ public class Player : MonoBehaviour
         }
         if (action.name == _jumpActionName)
         {
-            if (obj.performed)
-            {
-                _kirby.TriggerAction(KirbyAction.StartJumping);
-            }
-            else if (obj.canceled)
-            {
-                _kirby.TriggerAction(KirbyAction.StopJumping);
-            }
+            TriggerAction(obj, KirbyAction.StartJumping, KirbyAction.StopJumping);
+        }
+        if (action.name == _attackActionName)
+        {
+            TriggerAction(obj, KirbyAction.StartAttacking, KirbyAction.StopAttacking);
+        }
+    }
+
+    private void TriggerAction(InputAction.CallbackContext context, KirbyAction actionStart, KirbyAction actionStop)
+    {
+        if (context.performed)
+        {
+            _kirby.TriggerAction(actionStart);
+        }
+        else if (context.canceled)
+        {
+            _kirby.TriggerAction(actionStop);
         }
     }
 }

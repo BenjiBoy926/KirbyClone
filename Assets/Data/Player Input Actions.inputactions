@@ -20,6 +20,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Attack",
+                    "type": "Button",
+                    "id": "91a286e8-bcdf-4ba2-89dd-3e6b1ece2f5f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -135,8 +143,8 @@
                 },
                 {
                     "name": "",
-                    "id": "1d5fc78f-278b-48fa-afcb-aa4a79ffe609",
-                    "path": "<Keyboard>/space",
+                    "id": "c16322e8-8a18-408b-b5a6-373decc2c9ad",
+                    "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -146,12 +154,12 @@
                 },
                 {
                     "name": "",
-                    "id": "c16322e8-8a18-408b-b5a6-373decc2c9ad",
-                    "path": "<Keyboard>/upArrow",
+                    "id": "6fe91fd8-19c6-47ef-aad4-9a8f5a2ec66c",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Jump",
+                    "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
