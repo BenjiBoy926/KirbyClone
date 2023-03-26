@@ -1,0 +1,1 @@
+public delegate void DamageDelegate(Hitbox hitbox, Hurtbox hurtbox, int adjustedDamage);
