@@ -13,6 +13,8 @@ public class MainActor : MonoBehaviour
     private MainActorConfiguration _config;
     [SerializeField]
     private MainActorStateList _states;
+    [SerializeField]
+    private SpriteAnimator _animator;
 
     [SerializeField, ReadOnly]
     private MainActorState _previousState;
@@ -25,6 +27,7 @@ public class MainActor : MonoBehaviour
     public ColliderContact2D Contact => _contact;
     public MainActorConfiguration Config => _config;
     public MainActorStateList States => _states;
+    public SpriteAnimator Animator => _animator;
     public MainActorState PreviousState => _previousState;
     public MainActorState CurrentState => _currentState;
     public Vector2Int Heading => _heading;
@@ -55,6 +58,10 @@ public class MainActor : MonoBehaviour
             if (_currentState != null)
             {
                 _currentState.NotifyHeadingSet();
+            }
+            if (_animator != null)
+            {
+                _animator.FlipSpriteOnHorizontalInput(_heading.x);
             }
         }
     }

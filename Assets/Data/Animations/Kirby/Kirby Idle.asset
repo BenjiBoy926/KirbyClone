@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: accbb8dedfa3be049991acc40dbbcf7c, type: 3}
+  m_Name: Kirby Idle
+  m_EditorClassIdentifier: 
+  _frames:
+  - _sprite: {fileID: 995048784786106070, guid: 0f4bdd2a7707ac249a5de8acf0982004, type: 3}
+    _isActionFrame: 0
+    _overrideDefaultFrameTime: 0
+    _frameTime: 0
+  _defaultFrameTime: 0.3
+  _isLooping: 0

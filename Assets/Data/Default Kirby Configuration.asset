@@ -25,3 +25,8 @@ MonoBehaviour:
   _floatingMovement:
     _acceleration: 5
     _topSpeed: 5
+  _idleAnimation: {fileID: 11400000, guid: 61fb8ad294f14674b851c4a2507b03c3, type: 2}
+  _walkingAnimation: {fileID: 11400000, guid: 0c9ce5d4527dcbc48a6a01a4e283c5ea, type: 2}
+  _jumpingAnimation: {fileID: 11400000, guid: 37b14d1c09c5006459b34adf229650c6, type: 2}
+  _fallingAnimation: {fileID: 11400000, guid: ea1be1188432d534e80587dbb11a90fc, type: 2}
+  _floatingAnimation: {fileID: 11400000, guid: c8abd5d0a2e31b34a8946ec60742d9b9, type: 2}
