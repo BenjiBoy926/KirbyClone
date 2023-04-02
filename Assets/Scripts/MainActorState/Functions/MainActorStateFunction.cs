@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class KirbyStateFunction
+public abstract class MainActorStateFunction
 {
-    protected KirbyState _state;
+    protected MainActorState _state;
 
-    public KirbyStateFunction(KirbyState state)
+    public MainActorStateFunction(MainActorState state)
     {
         _state = state;
     }
@@ -15,5 +15,5 @@ public abstract class KirbyStateFunction
     public abstract void OnDisable();
     public abstract void Update();
     public abstract void NotifyHeadingSet();
-    public abstract void NotifyActionTriggered(KirbyAction action);
+    public abstract void NotifyActionTriggered(MainActorAction action);
 }

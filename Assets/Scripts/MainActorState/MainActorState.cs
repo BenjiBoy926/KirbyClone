@@ -1,20 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using NaughtyAttributes;
 
-public abstract class KirbyState : MonoBehaviour
+public abstract class MainActorState : MonoBehaviour
 {
     [SerializeField, ReadOnly]
     protected float _startTime;
     [SerializeField, ReadOnly]
-    protected KirbyState _intendedNextState;
-    [SerializeField]
-    protected Kirby _kirby;
+    protected MainActorState _intendedNextState;
+    [SerializeField, FormerlySerializedAs("_kirby")]
+    protected MainActor _actor;
 
-    private List<KirbyStateFunction> _functions = new List<KirbyStateFunction>();
+    private List<MainActorStateFunction> _functions = new List<MainActorStateFunction>();
 
-    public Kirby Kirby => _kirby;
+    public MainActor Actor => _actor;
     public float TimeSpentInState => Time.time - _startTime;
 
     protected virtual void OnEnable()
@@ -43,7 +44,7 @@ public abstract class KirbyState : MonoBehaviour
     {
         if (_intendedNextState != null)
         {
-            _kirby.SetState(_intendedNextState);
+            _actor.SetState(_intendedNextState);
             _intendedNextState = null;
         }
     }
@@ -54,18 +55,18 @@ public abstract class KirbyState : MonoBehaviour
             _functions[i].NotifyHeadingSet();
         }
     }
-    public virtual void NotifyActionTriggered(KirbyAction action)
+    public virtual void NotifyActionTriggered(MainActorAction action)
     {
         for (int i = 0; i < _functions.Count; i++)
         {
             _functions[i].NotifyActionTriggered(action);
         }
     }
-    public void AddFunction(KirbyStateFunction function)
+    public void AddFunction(MainActorStateFunction function)
     {
         _functions.Add(function);
     }
-    public void SetIntendedNextState(KirbyState state)
+    public void SetIntendedNextState(MainActorState state)
     {
         _intendedNextState = state;
     }

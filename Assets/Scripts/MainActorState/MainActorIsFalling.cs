@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KirbyIsFalling : KirbyState
+public class MainActorIsFalling : MainActorState
 {
     private void Awake()
     {
-        AddFunction(new SetIsFloatingWhenJumpActionTriggered(this));
+        AddFunction(new SetStateOnActionTriggered(this, _actor.States.IsFloating, MainActorAction.StartJumping));
         AddFunction(new SetIsWalkingWhenGroundReached(this));
         AddFunction(new ApplyAirMovement(this));
     }

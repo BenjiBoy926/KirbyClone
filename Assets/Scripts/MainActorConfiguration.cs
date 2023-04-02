@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Kirby Configuration")]
-public class KirbyConfiguration : ScriptableObject
+[CreateAssetMenu(menuName = "Main Actor Configuration")]
+public class MainActorConfiguration : ScriptableObject
 {
     [SerializeField]
     private RigidbodyMovement2D _walkingMovement = new RigidbodyMovement2D(20, 5);

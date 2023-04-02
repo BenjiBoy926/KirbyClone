@@ -2,18 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SetIsFallingWhenGroundLeft : KirbyStateFunction
+public class SetIsFallingWhenGroundLeft : MainActorStateFunction
 {
-    public SetIsFallingWhenGroundLeft(KirbyState state) : base(state) { }
+    public SetIsFallingWhenGroundLeft(MainActorState state) : base(state) { }
 
     public override void OnEnable()
     {
-        _state.Kirby.Contact.IsTouchingFloorChanged += Contact_IsTouchingFloorChanged;
+        _state.Actor.Contact.IsTouchingFloorChanged += Contact_IsTouchingFloorChanged;
         SetStateToFallingIfNeeded();
     }
     public override void OnDisable()
     {
-        _state.Kirby.Contact.IsTouchingFloorChanged -= Contact_IsTouchingFloorChanged;
+        _state.Actor.Contact.IsTouchingFloorChanged -= Contact_IsTouchingFloorChanged;
     }
     public override void Update()
     {
@@ -23,7 +23,7 @@ public class SetIsFallingWhenGroundLeft : KirbyStateFunction
     {
         
     }
-    public override void NotifyActionTriggered(KirbyAction action)
+    public override void NotifyActionTriggered(MainActorAction action)
     {
         
     }
@@ -34,9 +34,9 @@ public class SetIsFallingWhenGroundLeft : KirbyStateFunction
     }
     private void SetStateToFallingIfNeeded()
     {
-        if (!_state.Kirby.Contact.IsTouchingFloor)
+        if (!_state.Actor.Contact.IsTouchingFloor)
         {
-            _state.SetIntendedNextState(_state.Kirby.States.IsFalling);
+            _state.SetIntendedNextState(_state.Actor.States.IsFalling);
         }
     }
 }

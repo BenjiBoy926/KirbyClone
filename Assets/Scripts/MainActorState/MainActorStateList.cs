@@ -2,21 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KirbyStateList : MonoBehaviour
+public class MainActorStateList : MonoBehaviour
 {
     [SerializeField]
-    private KirbyIsWalking _isWalking;
+    private MainActorIsWalking _isWalking;
     [SerializeField]
-    private KirbyIsJumping _isJumping;
+    private MainActorIsJumping _isJumping;
     [SerializeField]
-    private KirbyIsFalling _isFalling;
+    private MainActorIsFalling _isFalling;
     [SerializeField]
-    private KirbyIsFloating _isFloating;
+    private MainActorIsFloating _isFloating;
     
-    public KirbyIsWalking IsWalking => _isWalking;
-    public KirbyIsJumping IsJumping => _isJumping;
-    public KirbyIsFalling IsFalling => _isFalling;
-    public KirbyIsFloating IsFloating => _isFloating;
+    public MainActorIsWalking IsWalking => _isWalking;
+    public MainActorIsJumping IsJumping => _isJumping;
+    public MainActorIsFalling IsFalling => _isFalling;
+    public MainActorIsFloating IsFloating => _isFloating;
 
     private void Reset()
     {

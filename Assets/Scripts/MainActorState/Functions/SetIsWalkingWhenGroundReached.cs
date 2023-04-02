@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SetIsWalkingWhenGroundReached : KirbyStateFunction
+public class SetIsWalkingWhenGroundReached : MainActorStateFunction
 {
-    public SetIsWalkingWhenGroundReached(KirbyState state) : base(state) { }
+    public SetIsWalkingWhenGroundReached(MainActorState state) : base(state) { }
     public override void OnEnable()
     {
-        _state.Kirby.Contact.IsTouchingFloorChanged += Contact_IsTouchingFloorChanged;
+        _state.Actor.Contact.IsTouchingFloorChanged += Contact_IsTouchingFloorChanged;
         SetStateToWalkingIfNeeded();
     }
     public override void OnDisable()
     {
-        _state.Kirby.Contact.IsTouchingFloorChanged -= Contact_IsTouchingFloorChanged;
+        _state.Actor.Contact.IsTouchingFloorChanged -= Contact_IsTouchingFloorChanged;
     }
     public override void Update()
     {
@@ -22,7 +22,7 @@ public class SetIsWalkingWhenGroundReached : KirbyStateFunction
     {
 
     }
-    public override void NotifyActionTriggered(KirbyAction action)
+    public override void NotifyActionTriggered(MainActorAction action)
     {
 
     }
@@ -32,9 +32,9 @@ public class SetIsWalkingWhenGroundReached : KirbyStateFunction
     }
     private void SetStateToWalkingIfNeeded()
     {
-        if (_state.Kirby.Contact.IsTouchingFloor)
+        if (_state.Actor.Contact.IsTouchingFloor)
         {
-            _state.SetIntendedNextState(_state.Kirby.States.IsWalking);
+            _state.SetIntendedNextState(_state.Actor.States.IsWalking);
         }
     }
 }

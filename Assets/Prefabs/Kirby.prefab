@@ -108,8 +108,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1601725650616204120}
-  - component: {fileID: 1170842997616815233}
   - component: {fileID: 1967675963632541971}
+  - component: {fileID: 1004106397345242042}
   - component: {fileID: 2697519713757430129}
   - component: {fileID: 6083245263556028040}
   - component: {fileID: 5168852763857017838}
@@ -137,25 +137,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1170842997616815233
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1601725650616204121}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ed856bf55e859340b6d80fe45fdc732, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _rigidbody: {fileID: 1967675963632541971}
-  _contact: {fileID: 5168852763857017838}
-  _config: {fileID: 11400000, guid: bd74792919bac464485a0c502da3494d, type: 2}
-  _states: {fileID: 4480392291759644905}
-  _previousState: {fileID: 0}
-  _currentState: {fileID: 0}
-  _heading: {x: 0, y: 0}
 --- !u!50 &1967675963632541971
 Rigidbody2D:
   serializedVersion: 4
@@ -177,6 +158,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1004106397345242042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601725650616204121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1670862cc202db443a07cc13943bad79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rigidbody: {fileID: 1967675963632541971}
+  _contact: {fileID: 5168852763857017838}
+  _config: {fileID: 11400000, guid: 2a291f7eb09b02c45907971f8539c1f4, type: 2}
+  _states: {fileID: 7234084421988463057}
+  _previousState: {fileID: 0}
+  _currentState: {fileID: 0}
+  _heading: {x: 0, y: 0}
 --- !u!114 &2697519713757430129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -251,10 +251,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db2e6b0b112761048bd982d4ba176802, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _kirby: {fileID: 1170842997616815233}
+  _actor: {fileID: 1004106397345242042}
   _input: {fileID: 2697519713757430129}
   _headingActionName: Heading
   _jumpActionName: Jump
+  _attackActionName: Attack
 --- !u!114 &5168852763857017838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -336,7 +337,7 @@ GameObject:
   - component: {fileID: 7303695201967345120}
   - component: {fileID: 7216544309188653190}
   - component: {fileID: 4370857694020608383}
-  - component: {fileID: 4480392291759644905}
+  - component: {fileID: 7234084421988463057}
   m_Layer: 0
   m_Name: States
   m_TagString: Untagged
@@ -372,7 +373,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _startTime: 0
   _intendedNextState: {fileID: 0}
-  _kirby: {fileID: 1170842997616815233}
+  _actor: {fileID: 1004106397345242042}
 --- !u!114 &7303695201967345120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -387,7 +388,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _startTime: 0
   _intendedNextState: {fileID: 0}
-  _kirby: {fileID: 1170842997616815233}
+  _actor: {fileID: 1004106397345242042}
 --- !u!114 &7216544309188653190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -402,7 +403,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _startTime: 0
   _intendedNextState: {fileID: 0}
-  _kirby: {fileID: 1170842997616815233}
+  _actor: {fileID: 1004106397345242042}
 --- !u!114 &4370857694020608383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -417,9 +418,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _startTime: 0
   _intendedNextState: {fileID: 0}
-  _kirby: {fileID: 1170842997616815233}
+  _actor: {fileID: 1004106397345242042}
   _gravityBeforeState: 0
---- !u!114 &4480392291759644905
+--- !u!114 &7234084421988463057
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -428,7 +429,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1601725651163653485}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8ef893c42501f2428273744b4ba6e4a, type: 3}
+  m_Script: {fileID: 11500000, guid: dc8e7f6ab2c256f4c81dedf81ee01467, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _isWalking: {fileID: 4810755754645079291}

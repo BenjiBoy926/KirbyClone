@@ -9,13 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e4cc4a24c503bd4ca35558c362057d7, type: 3}
-  m_Name: Default Kirby
+  m_Script: {fileID: 11500000, guid: 014188b7696fbbf43b0376ab2d7a229d, type: 3}
+  m_Name: Default Kirby Configuration
   m_EditorClassIdentifier: 
   _walkingMovement:
-    _acceleration: 20
+    _acceleration: 30
     _topSpeed: 5
-  _jumpSpeed: 7
+  _jumpSpeed: 10
   _jumpTime: 0.5
   _airMovement:
     _acceleration: 10

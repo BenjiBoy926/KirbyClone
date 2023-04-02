@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ApplyAirMovement : KirbyStateFunction
+public class ApplyAirMovement : MainActorStateFunction
 {
-    public ApplyAirMovement(KirbyState state) : base(state) { }
+    public ApplyAirMovement(MainActorState state) : base(state) { }
     public override void OnEnable()
     {
 
@@ -15,14 +15,14 @@ public class ApplyAirMovement : KirbyStateFunction
     }
     public override void Update()
     {
-        Kirby kirby = _state.Kirby;
+        MainActor kirby = _state.Actor;
         kirby.Config.AirMovement.Move(kirby.Rigidbody, kirby.Heading.x, 0);
     }
     public override void NotifyHeadingSet()
     {
 
     }
-    public override void NotifyActionTriggered(KirbyAction action)
+    public override void NotifyActionTriggered(MainActorAction action)
     {
 
     }

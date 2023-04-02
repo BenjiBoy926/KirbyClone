@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
     [SerializeField]
-    private Kirby _kirby;
+    private MainActor _actor;
     [SerializeField]
     private PlayerInput _input;
     [SerializeField]
@@ -38,27 +39,27 @@ public class Player : MonoBehaviour
             Vector2Int heading = Vector2Int.zero;
             heading.x = Mathf.RoundToInt(headingFloat.x);
             heading.y = Mathf.RoundToInt(headingFloat.y);
-            _kirby.SetHeading(heading);
+            _actor.SetHeading(heading);
         }
         if (action.name == _jumpActionName)
         {
-            TriggerAction(obj, KirbyAction.StartJumping, KirbyAction.StopJumping);
+            TriggerAction(obj, MainActorAction.StartJumping, MainActorAction.StopJumping);
         }
         if (action.name == _attackActionName)
         {
-            TriggerAction(obj, KirbyAction.StartAttacking, KirbyAction.StopAttacking);
+            TriggerAction(obj, MainActorAction.StartAttacking, MainActorAction.StopAttacking);
         }
     }
 
-    private void TriggerAction(InputAction.CallbackContext context, KirbyAction actionStart, KirbyAction actionStop)
+    private void TriggerAction(InputAction.CallbackContext context, MainActorAction actionStart, MainActorAction actionStop)
     {
         if (context.performed)
         {
-            _kirby.TriggerAction(actionStart);
+            _actor.TriggerAction(actionStart);
         }
         else if (context.canceled)
         {
-            _kirby.TriggerAction(actionStop);
+            _actor.TriggerAction(actionStop);
         }
     }
 }
