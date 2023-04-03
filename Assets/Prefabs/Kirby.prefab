@@ -356,6 +356,7 @@ GameObject:
   - component: {fileID: 7303695201967345120}
   - component: {fileID: 7216544309188653190}
   - component: {fileID: 4370857694020608383}
+  - component: {fileID: 1654634924325065393}
   - component: {fileID: 7234084421988463057}
   m_Layer: 0
   m_Name: States
@@ -408,6 +409,7 @@ MonoBehaviour:
   _startTime: 0
   _intendedNextState: {fileID: 0}
   _actor: {fileID: 1004106397345242042}
+  _hasStartedActionFrame: 0
 --- !u!114 &7216544309188653190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -439,6 +441,22 @@ MonoBehaviour:
   _intendedNextState: {fileID: 0}
   _actor: {fileID: 1004106397345242042}
   _gravityBeforeState: 0
+--- !u!114 &1654634924325065393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601725651163653485}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7564a0293718dc640b64892fe7627202, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _startTime: 0
+  _intendedNextState: {fileID: 0}
+  _actor: {fileID: 1004106397345242042}
+  _gravityBeforeState: 0
 --- !u!114 &7234084421988463057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -455,6 +473,7 @@ MonoBehaviour:
   _isJumping: {fileID: 7303695201967345120}
   _isFalling: {fileID: 7216544309188653190}
   _isFloating: {fileID: 4370857694020608383}
+  _isSpittingAir: {fileID: 1654634924325065393}
 --- !u!1 &1601725651473703999
 GameObject:
   m_ObjectHideFlags: 0

@@ -35,7 +35,7 @@ public class MainActorIsJumping : MainActorState
 
         MainActorConfiguration config = _actor.Config;
         Rigidbody2D rb = _actor.Rigidbody;
-        rb.velocity = rb.velocity.SetY(config.JumpSpeed);
+        rb.SetVelocityY(config.JumpSpeed);
 
         if (TimeSpentInState > config.JumpTime)
         {
