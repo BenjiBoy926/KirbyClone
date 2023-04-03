@@ -14,13 +14,13 @@ public class MainActorIsWalking : MainActorState
         MainActorConfiguration config = _actor.Config;
         config.WalkingMovement.Move(_actor.Rigidbody, _actor.Heading.x, 0);
 
-        if (_actor.Heading.x != 0 && _actor.Animator.CurrentAnimation != config.WalkingAnimation)
+        if (_actor.Heading.x == 0)
         {
-            _actor.Animator.SetAnimation(config.WalkingAnimation);
+            _actor.Animator.SetAnimation(config.IdleAnimation, false);
         }
-        if (_actor.Heading.x == 0 && _actor.Animator.CurrentAnimation != config.IdleAnimation)
+        else
         {
-            _actor.Animator.SetAnimation(config.IdleAnimation);
+            _actor.Animator.SetAnimation(config.WalkingAnimation, false);
         }
     }
 }

@@ -33,6 +33,8 @@ public class MainActorConfiguration : ScriptableObject
     private SpriteAnimation _fallingAnimation;
     [SerializeField]
     private SpriteAnimation _floatingAnimation;
+    [SerializeField]
+    private SpriteAnimation _airSpitAnimation;
 
     public RigidbodyMovement2D WalkingMovement => _walkingMovement;
     public float JumpSpeed => _jumpSpeed;
@@ -46,4 +48,5 @@ public class MainActorConfiguration : ScriptableObject
     public SpriteAnimation JumpingAnimation => _jumpingAnimation;
     public SpriteAnimation FallingAnimation => _fallingAnimation;
     public SpriteAnimation FloatingAnimation => _floatingAnimation;
+    public SpriteAnimation AirSpitAnimation => _airSpitAnimation;
 }

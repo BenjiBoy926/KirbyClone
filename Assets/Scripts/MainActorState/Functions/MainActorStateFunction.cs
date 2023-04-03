@@ -14,6 +14,5 @@ public abstract class MainActorStateFunction
     public abstract void OnEnable();
     public abstract void OnDisable();
     public abstract void Update();
-    public abstract void NotifyHeadingSet();
     public abstract void NotifyActionTriggered(MainActorAction action);
 }

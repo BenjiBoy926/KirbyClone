@@ -13,17 +13,17 @@ MonoBehaviour:
   m_Name: Kirby Floating
   m_EditorClassIdentifier: 
   _frames:
-  - _sprite: {fileID: -1413403004258229057, guid: 0f4bdd2a7707ac249a5de8acf0982004, type: 3}
+  - _sprite: {fileID: -1049031575009899, guid: 041bcad2368742247bc7c5c30d4afd1c, type: 3}
     _isActionFrame: 0
     _overrideDefaultFrameTime: 0
-    _frameTime: 0
-  - _sprite: {fileID: 7983099930728886219, guid: 0f4bdd2a7707ac249a5de8acf0982004, type: 3}
+    _frameTime: 0.2
+  - _sprite: {fileID: 5149306132542231994, guid: 041bcad2368742247bc7c5c30d4afd1c, type: 3}
     _isActionFrame: 1
-    _overrideDefaultFrameTime: 0
-    _frameTime: 0
-  - _sprite: {fileID: -6745382202613449175, guid: 0f4bdd2a7707ac249a5de8acf0982004, type: 3}
+    _overrideDefaultFrameTime: 1
+    _frameTime: 0.3
+  - _sprite: {fileID: -5455443582737103862, guid: 041bcad2368742247bc7c5c30d4afd1c, type: 3}
     _isActionFrame: 0
     _overrideDefaultFrameTime: 0
     _frameTime: 0
-  _defaultFrameTime: 0.3
+  _defaultFrameTime: 0.1
   _isLooping: 0

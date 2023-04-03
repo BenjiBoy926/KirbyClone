@@ -13,19 +13,19 @@ MonoBehaviour:
   m_Name: Kirby Walking
   m_EditorClassIdentifier: 
   _frames:
-  - _sprite: {fileID: 881050107801865629, guid: 0f4bdd2a7707ac249a5de8acf0982004, type: 3}
+  - _sprite: {fileID: 627585647570536919, guid: 9a196a97e48d04b4a8544f58b7129937, type: 3}
     _isActionFrame: 0
     _overrideDefaultFrameTime: 0
     _frameTime: 0
-  - _sprite: {fileID: 7303076977087433685, guid: 0f4bdd2a7707ac249a5de8acf0982004, type: 3}
+  - _sprite: {fileID: 409334780486031926, guid: 9a196a97e48d04b4a8544f58b7129937, type: 3}
     _isActionFrame: 0
     _overrideDefaultFrameTime: 0
     _frameTime: 0
-  - _sprite: {fileID: -5158563777819528074, guid: 0f4bdd2a7707ac249a5de8acf0982004, type: 3}
+  - _sprite: {fileID: 3707742012215345652, guid: 9a196a97e48d04b4a8544f58b7129937, type: 3}
     _isActionFrame: 0
     _overrideDefaultFrameTime: 0
     _frameTime: 0
-  - _sprite: {fileID: -1903713963067201994, guid: 0f4bdd2a7707ac249a5de8acf0982004, type: 3}
+  - _sprite: {fileID: 7651181914973904022, guid: 9a196a97e48d04b4a8544f58b7129937, type: 3}
     _isActionFrame: 0
     _overrideDefaultFrameTime: 0
     _frameTime: 0

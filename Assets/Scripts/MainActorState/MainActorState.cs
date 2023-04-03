@@ -48,13 +48,6 @@ public abstract class MainActorState : MonoBehaviour
             _intendedNextState = null;
         }
     }
-    public virtual void NotifyHeadingSet()
-    {
-        for (int i = 0; i < _functions.Count; i++)
-        {
-            _functions[i].NotifyHeadingSet();
-        }
-    }
     public virtual void NotifyActionTriggered(MainActorAction action)
     {
         for (int i = 0; i < _functions.Count; i++)

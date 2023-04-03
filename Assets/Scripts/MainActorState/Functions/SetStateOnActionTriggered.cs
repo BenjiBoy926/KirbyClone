@@ -26,10 +26,6 @@ public class SetStateOnActionTriggered : MainActorStateFunction
     {
 
     }
-    public override void NotifyHeadingSet()
-    {
-
-    }
     public override void NotifyActionTriggered(MainActorAction action)
     {
         if (_action == action)

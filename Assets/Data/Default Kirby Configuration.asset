@@ -30,3 +30,4 @@ MonoBehaviour:
   _jumpingAnimation: {fileID: 11400000, guid: 37b14d1c09c5006459b34adf229650c6, type: 2}
   _fallingAnimation: {fileID: 11400000, guid: ea1be1188432d534e80587dbb11a90fc, type: 2}
   _floatingAnimation: {fileID: 11400000, guid: c8abd5d0a2e31b34a8946ec60742d9b9, type: 2}
+  _airSpitAnimation: {fileID: 11400000, guid: 49ab2dd8e134f0a4ea904dc78cb62e19, type: 2}

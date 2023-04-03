@@ -19,10 +19,6 @@ public class SetIsFallingWhenGroundLeft : MainActorStateFunction
     {
         
     }
-    public override void NotifyHeadingSet()
-    {
-        
-    }
     public override void NotifyActionTriggered(MainActorAction action)
     {
         

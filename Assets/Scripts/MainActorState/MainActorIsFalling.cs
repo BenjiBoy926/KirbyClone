@@ -10,4 +10,9 @@ public class MainActorIsFalling : MainActorState
         AddFunction(new SetIsWalkingWhenGroundReached(this));
         AddFunction(new ApplyAirMovement(this));
     }
+    protected override void OnEnable()
+    {
+        base.OnEnable();
+        _actor.Animator.SetAnimation(_actor.Config.FallingAnimation, true);
+    }
 }

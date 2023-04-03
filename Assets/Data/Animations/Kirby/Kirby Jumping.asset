@@ -13,17 +13,17 @@ MonoBehaviour:
   m_Name: Kirby Jumping
   m_EditorClassIdentifier: 
   _frames:
-  - _sprite: {fileID: -7863512156193208317, guid: 0f4bdd2a7707ac249a5de8acf0982004, type: 3}
+  - _sprite: {fileID: 7420372322068885610, guid: f941e1060f6f22d448d16f92592a20ae, type: 3}
     _isActionFrame: 0
     _overrideDefaultFrameTime: 0
     _frameTime: 0
-  - _sprite: {fileID: 1164470491920533681, guid: 0f4bdd2a7707ac249a5de8acf0982004, type: 3}
+  - _sprite: {fileID: -7032145473824457357, guid: f941e1060f6f22d448d16f92592a20ae, type: 3}
     _isActionFrame: 1
     _overrideDefaultFrameTime: 0
     _frameTime: 0
-  - _sprite: {fileID: 2582052121814366298, guid: 0f4bdd2a7707ac249a5de8acf0982004, type: 3}
+  - _sprite: {fileID: -7568047999040575167, guid: f941e1060f6f22d448d16f92592a20ae, type: 3}
     _isActionFrame: 0
     _overrideDefaultFrameTime: 0
     _frameTime: 0
-  _defaultFrameTime: 0.3
+  _defaultFrameTime: 0.1
   _isLooping: 0

@@ -18,10 +18,6 @@ public class SetIsWalkingWhenGroundReached : MainActorStateFunction
     {
 
     }
-    public override void NotifyHeadingSet()
-    {
-
-    }
     public override void NotifyActionTriggered(MainActorAction action)
     {
 

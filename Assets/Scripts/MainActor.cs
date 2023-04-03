@@ -55,13 +55,9 @@ public class MainActor : MonoBehaviour
         if (_heading != heading)
         {
             _heading = heading;
-            if (_currentState != null)
-            {
-                _currentState.NotifyHeadingSet();
-            }
             if (_animator != null)
             {
-                _animator.FlipSpriteOnHorizontalInput(_heading.x);
+                _animator.FlipSprite(_heading.x);
             }
         }
     }

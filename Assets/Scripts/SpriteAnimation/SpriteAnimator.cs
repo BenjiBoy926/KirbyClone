@@ -20,12 +20,13 @@ public class SpriteAnimator : MonoBehaviour
 
     public event SpriteFrameDelegate OnFrameEntered;
     public event SpriteFrameDelegate OnFrameExited;
+    public event System.Action OnAnimationEnded;
 
     private void Awake()
     {
         if (_playOnAwake)
         {
-            SetAnimation(_currentAnimation);
+            SetAnimation(_currentAnimation, true);
         }
     }
     private void Update()
@@ -35,8 +36,12 @@ public class SpriteAnimator : MonoBehaviour
             EnterNextFrame();
         }
     }
-    public void SetAnimation(SpriteAnimation animation)
+    public void SetAnimation(SpriteAnimation animation, bool restartIfSameAnimation)
     {
+        if (!restartIfSameAnimation && animation == _currentAnimation)
+        {
+            return;
+        }
         ExitCurrentFrame();
         _currentAnimation = animation;
         if (_currentAnimation != null)
@@ -48,22 +53,28 @@ public class SpriteAnimator : MonoBehaviour
     }
     private void EnterNextFrame()
     {
-        ExitCurrentFrame();
-        _currentFrame = (_currentFrame + 1) % _currentAnimation.TotalFrames;
-        EnterCurrentFrame();
-        RefreshEnabled();
-    }
-    private void EnterCurrentFrame()
-    {
         if (_currentAnimation == null)
         {
             return;
         }
-        
+        ExitCurrentFrame();
+        IncrementCurrentFrame();
+        EnterCurrentFrame();
+        RefreshEnabled();
+        if (!enabled)
+        {
+            OnAnimationEnded?.Invoke();
+        }
+    }
+    private void EnterCurrentFrame()
+    {
+        if (_currentAnimation == null || _currentFrame < 0 || _currentFrame >= _currentAnimation.TotalFrames)
+        {
+            return;
+        }
         SpriteFrame frame = _currentAnimation.GetFrame(_currentFrame);
         _renderer.sprite = frame.Sprite;
         _timeOfNextAnimation = Time.time + _currentAnimation.GetFrameTime(_currentFrame);
-
         OnFrameEntered?.Invoke(frame);
     }
     private void ExitCurrentFrame()
@@ -76,9 +87,9 @@ public class SpriteAnimator : MonoBehaviour
     }
     private void RefreshEnabled()
     {
-        enabled = _currentAnimation != null && (_currentAnimation.IsLooping || _currentFrame < (_currentAnimation.TotalFrames - 1));
+        enabled = _currentAnimation != null && (_currentAnimation.IsLooping || _currentFrame < _currentAnimation.TotalFrames);
     }
-    public void FlipSpriteOnHorizontalInput(int input)
+    public void FlipSprite(int input)
     {
         if (input > 0)
         {
@@ -87,6 +98,14 @@ public class SpriteAnimator : MonoBehaviour
         if (input < 0)
         {
             _renderer.flipX = true;
+        }
+    }
+    private void IncrementCurrentFrame()
+    {
+        _currentFrame++;
+        if (_currentAnimation != null && _currentAnimation.IsLooping)
+        {
+            _currentFrame %= _currentAnimation.TotalFrames;
         }
     }
 }
