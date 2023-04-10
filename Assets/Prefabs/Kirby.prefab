@@ -132,6 +132,8 @@ GameObject:
   - component: {fileID: 6083245263556028040}
   - component: {fileID: 5168852763857017838}
   - component: {fileID: 8144685192033563445}
+  - component: {fileID: 2647669139717485592}
+  - component: {fileID: 2876668191374051968}
   m_Layer: 0
   m_Name: Kirby
   m_TagString: Untagged
@@ -191,11 +193,9 @@ MonoBehaviour:
   _rigidbody: {fileID: 1967675963632541971}
   _contact: {fileID: 5168852763857017838}
   _config: {fileID: 11400000, guid: 2a291f7eb09b02c45907971f8539c1f4, type: 2}
-  _states: {fileID: 7234084421988463057}
+  _stateMachine: {fileID: 2647669139717485592}
   _animator: {fileID: 6304108517778142237}
-  _previousState: {fileID: 0}
-  _currentState: {fileID: 0}
-  _heading: {x: 0, y: 0}
+  _input: {fileID: 2876668191374051968}
 --- !u!114 &2697519713757430129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -313,6 +313,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 1967675963632541971}
   _previousIsSleeping: 0
+--- !u!114 &2647669139717485592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601725650616204121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc8e7f6ab2c256f4c81dedf81ee01467, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isWalking: {fileID: 4810755754645079291}
+  _isJumping: {fileID: 7303695201967345120}
+  _isFalling: {fileID: 7216544309188653190}
+  _isFloating: {fileID: 4370857694020608383}
+  _isSpittingAir: {fileID: 1654634924325065393}
+  _previousState: {fileID: 0}
+  _currentState: {fileID: 0}
+--- !u!114 &2876668191374051968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601725650616204121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df2e1c629a7ed164c9293f6068b0d9d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _actor: {fileID: 1004106397345242042}
+  _heading: {x: 0, y: 0}
 --- !u!1 &1601725650659203196
 GameObject:
   m_ObjectHideFlags: 0
@@ -357,7 +390,6 @@ GameObject:
   - component: {fileID: 7216544309188653190}
   - component: {fileID: 4370857694020608383}
   - component: {fileID: 1654634924325065393}
-  - component: {fileID: 7234084421988463057}
   m_Layer: 0
   m_Name: States
   m_TagString: Untagged
@@ -457,23 +489,6 @@ MonoBehaviour:
   _intendedNextState: {fileID: 0}
   _actor: {fileID: 1004106397345242042}
   _gravityBeforeState: 0
---- !u!114 &7234084421988463057
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1601725651163653485}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc8e7f6ab2c256f4c81dedf81ee01467, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _isWalking: {fileID: 4810755754645079291}
-  _isJumping: {fileID: 7303695201967345120}
-  _isFalling: {fileID: 7216544309188653190}
-  _isFloating: {fileID: 4370857694020608383}
-  _isSpittingAir: {fileID: 1654634924325065393}
 --- !u!1 &1601725651473703999
 GameObject:
   m_ObjectHideFlags: 0

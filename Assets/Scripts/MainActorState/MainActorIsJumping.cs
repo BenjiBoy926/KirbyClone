@@ -11,7 +11,7 @@ public class MainActorIsJumping : MainActorState
     private void Awake()
     {
         AddFunction(new ApplyAirMovement(this));
-        AddFunction(new SetStateOnActionTriggered(this, _actor.States.IsFloating, MainActorAction.StartJumping));
+        AddFunction(new SetStateOnActionTriggered(this, _actor.StateMachine.IsFloating, MainActorAction.StartJumping));
     }
     protected override void OnEnable()
     {
@@ -39,14 +39,14 @@ public class MainActorIsJumping : MainActorState
 
         if (TimeSpentInState > config.JumpTime)
         {
-            SetIntendedNextState(_actor.States.IsFalling);
+            SetIntendedNextState(_actor.StateMachine.IsFalling);
         }
     }
     public override void NotifyActionTriggered(MainActorAction action)
     {
         if (action == MainActorAction.StopJumping)
         {
-            SetIntendedNextState(_actor.States.IsFalling);
+            SetIntendedNextState(_actor.StateMachine.IsFalling);
         }
     }
     private void Animator_OnFrameEntered(SpriteFrame frame)

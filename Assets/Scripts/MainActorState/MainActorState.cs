@@ -44,7 +44,7 @@ public abstract class MainActorState : MonoBehaviour
     {
         if (_intendedNextState != null)
         {
-            _actor.SetState(_intendedNextState);
+            _actor.StateMachine.SetState(_intendedNextState);
             _intendedNextState = null;
         }
     }

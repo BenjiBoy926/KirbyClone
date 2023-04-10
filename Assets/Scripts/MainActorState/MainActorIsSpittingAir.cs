@@ -40,11 +40,11 @@ public class MainActorIsSpittingAir : MainActorState
     {
         if (_actor.Contact.IsTouchingFloor)
         {
-            SetIntendedNextState(_actor.States.IsWalking);
+            SetIntendedNextState(_actor.StateMachine.IsWalking);
         }
         else
         {
-            SetIntendedNextState(_actor.States.IsFalling);
+            SetIntendedNextState(_actor.StateMachine.IsFalling);
         }
     }
 }

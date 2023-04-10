@@ -15,15 +15,6 @@ public class SetIsFallingWhenGroundLeft : MainActorStateFunction
     {
         _state.Actor.Contact.IsTouchingFloorChanged -= Contact_IsTouchingFloorChanged;
     }
-    public override void Update()
-    {
-        
-    }
-    public override void NotifyActionTriggered(MainActorAction action)
-    {
-        
-    }
-
     private void Contact_IsTouchingFloorChanged(bool isTouching)
     {
         SetStateToFallingIfNeeded();
@@ -32,7 +23,7 @@ public class SetIsFallingWhenGroundLeft : MainActorStateFunction
     {
         if (!_state.Actor.Contact.IsTouchingFloor)
         {
-            _state.SetIntendedNextState(_state.Actor.States.IsFalling);
+            _state.SetIntendedNextState(_state.Actor.StateMachine.IsFalling);
         }
     }
 }

@@ -13,19 +13,6 @@ public class SetStateOnActionTriggered : MainActorStateFunction
         _nextState = nextState;
         _action = action;
     }
-
-    public override void OnEnable()
-    {
-
-    }
-    public override void OnDisable()
-    {
-
-    }
-    public override void Update()
-    {
-
-    }
     public override void NotifyActionTriggered(MainActorAction action)
     {
         if (_action == action)

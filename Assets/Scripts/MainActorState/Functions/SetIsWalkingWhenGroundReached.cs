@@ -14,14 +14,6 @@ public class SetIsWalkingWhenGroundReached : MainActorStateFunction
     {
         _state.Actor.Contact.IsTouchingFloorChanged -= Contact_IsTouchingFloorChanged;
     }
-    public override void Update()
-    {
-
-    }
-    public override void NotifyActionTriggered(MainActorAction action)
-    {
-
-    }
     private void Contact_IsTouchingFloorChanged(bool isTouching)
     {
         SetStateToWalkingIfNeeded();
@@ -30,7 +22,7 @@ public class SetIsWalkingWhenGroundReached : MainActorStateFunction
     {
         if (_state.Actor.Contact.IsTouchingFloor)
         {
-            _state.SetIntendedNextState(_state.Actor.States.IsWalking);
+            _state.SetIntendedNextState(_state.Actor.StateMachine.IsWalking);
         }
     }
 }

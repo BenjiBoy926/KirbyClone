@@ -11,8 +11,8 @@ public abstract class MainActorStateFunction
         _state = state;
     }
 
-    public abstract void OnEnable();
-    public abstract void OnDisable();
-    public abstract void Update();
-    public abstract void NotifyActionTriggered(MainActorAction action);
+    public virtual void OnEnable() { }
+    public virtual void OnDisable() { }
+    public virtual void Update() { }
+    public virtual void NotifyActionTriggered(MainActorAction action) { }
 }

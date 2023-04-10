@@ -27,7 +27,7 @@ public class MainActorIsFloating : MainActorState
     protected override void Update()
     {
         base.Update();
-        _actor.Config.FloatingMovement.Move(_actor.Rigidbody, _actor.Heading.x, 0);
+        _actor.Config.FloatingMovement.Move(_actor.Rigidbody, _actor.Input.Heading.x, 0);
     }
     public override void NotifyActionTriggered(MainActorAction action)
     {
@@ -37,7 +37,7 @@ public class MainActorIsFloating : MainActorState
         }
         if (action == MainActorAction.StartAttacking)
         {
-            SetIntendedNextState(_actor.States.IsSpittingAir);
+            SetIntendedNextState(_actor.StateMachine.IsSpittingAir);
         }
     }
     private void StartFloat()
@@ -52,7 +52,7 @@ public class MainActorIsFloating : MainActorState
     {
         if (isTouching)
         {
-            SetIntendedNextState(_actor.States.IsSpittingAir);
+            SetIntendedNextState(_actor.StateMachine.IsSpittingAir);
         }
     }
     private void Animator_OnFrameEntered(SpriteFrame frame)

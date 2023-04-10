@@ -39,7 +39,7 @@ public class Player : MonoBehaviour
             Vector2Int heading = Vector2Int.zero;
             heading.x = Mathf.RoundToInt(headingFloat.x);
             heading.y = Mathf.RoundToInt(headingFloat.y);
-            _actor.SetHeading(heading);
+            _actor.Input.SetHeading(heading);
         }
         if (action.name == _jumpActionName)
         {
@@ -55,11 +55,11 @@ public class Player : MonoBehaviour
     {
         if (context.performed)
         {
-            _actor.TriggerAction(actionStart);
+            _actor.Input.TriggerAction(actionStart);
         }
         else if (context.canceled)
         {
-            _actor.TriggerAction(actionStop);
+            _actor.Input.TriggerAction(actionStop);
         }
     }
 }
